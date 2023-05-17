@@ -3,17 +3,13 @@ require_once '../dbkoneksi.php';
 ?>
 
 <?php 
-    // cek apakah terdapat parameter id pada URL, jika ada maka dilakukan edit data
     $_id = isset($_GET['id']) ? $_GET['id'] : null;
     if(!empty($_id)){
-        // ambil data produk berdasarkan id
         $sql = "SELECT * FROM vendor WHERE id=?";
         $st = $dbh->prepare($sql);
         $st->execute([$_id]);
         $row = $st->fetch();
     }else{
-        // jika tidak ada parameter id pada URL, maka dianggap input data baru
-        // inisialisasi variabel $row sebagai array kosong
         $row = [];
     }
 ?>

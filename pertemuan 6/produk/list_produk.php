@@ -6,7 +6,6 @@
 <?php 
     // select all data from table "produk"
     $sql = "SELECT * FROM produk";
-    // execute the query
     $rs = $dbh->query($sql);
 ?>
 

@@ -1,12 +1,9 @@
 <?php 
-    // include database connection
     require_once '../dbkoneksi.php';
 ?>
 
 <?php 
-    // select all data from table "produk"
     $sql = "SELECT * FROM pembelian";
-    // execute the query
     $rs = $dbh->query($sql);
 ?>
 
