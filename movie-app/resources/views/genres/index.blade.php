@@ -35,53 +35,20 @@
                     </tr>
                 </tfoot>
                 <tbody>
+                    @foreach ($genres as $genre)
                     <tr>
-                        <td>1</td>
-                        <td>Drama</td>
-                        <td>Example</td>
+                        <td>{{ $genre['no'] }}</td>
+                        <td>{{ $genre['genre'] }}</td>
+                        <td>{{ $genre['deskripsi'] }}</td>
                         <td>
-                            <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                            <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
+                            <a href="" class="btn btn-sm btn-warning">Edit</a>
+                            <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapusnya?')">Delate</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Action</td>
-                        <td>Example</td>
-                        <td>
-                            <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                            <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Horror</td>
-                        <td>Example</td>
-                        <td>
-                            <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                            <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Romance</td>
-                        <td>Example</td>
-                        <td>
-                            <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                            <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Comedy</td>
-                        <td>Example</td>
-                        <td>
-                            <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                            <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
-                        </td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
     </div>
+    
 @endsection

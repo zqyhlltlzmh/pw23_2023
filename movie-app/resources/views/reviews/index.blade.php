@@ -41,43 +41,21 @@
                     </tr>
                 </tfoot>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Train To Busan</td>
-                        <td>Yeon Sang-Ho</td>
-                        <td>8.9</td>
-                        <td>Although the movie is Korean and English watchers need subs, this movie is absolutely 100000000% worth it. The movie quickly catches watchers attention and has you on the edge of your scene once the action start and keeps you there.</td>
-                        <td>July 2016</td>
-                        <td>
-                            <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                            <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>2012</td>
-                        <td>Roland Emmerich</td>
-                        <td>8.2</td>
-                        <td>A two plus hour of chaos, and cheesy entertainment. I loved it, highly recommend you to watch. I personally enjoyed that one scene where those giraffes were airlifted into the ark.</td>
-                        <td>13-11-09</td>
-                        <td>
-                            <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                            <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Miracle In Cell</td>
-                        <td>Hanung Bramantyo</td>
-                        <td>7.9</td>
-                        <td>Film nya seru banget asli. tapi ga rekomen buat yng ga punya bapa yaa. bercandaa film nya rekomen banget bagi yang masi punya or tidak punya bapa.</td>
-                        <td>09-08-22</td>
-                        <td>
-                            <a href="" class="btn btn-sm btn-warning"> Edit</a>
-                            <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
-                        </td>
-                    </tr>
-                </tbody>
+                    @foreach ($reviews as $review)
+                        <tr>
+                            <td>{{ $review['no'] }}</td>
+                            <td>{{ $review['film'] }}</td>
+                            <td>{{ $review['user'] }}</td>
+                            <td>{{ $review['rating'] }}</td>
+                            <td>{{ $review['review'] }}</td>
+                            <td>{{ $review['tanggal'] }}</td>
+                            <td>
+                                <a href="" class="btn btn-sm btn-warning"> Edit</a>
+                                <a href="" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus?')"> Delete</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>    
             </table>
         </div>
     </div>
