@@ -60,7 +60,8 @@ class MovieController extends Controller
      */
     public function edit(Movie $movie)
     {
-        //
+        $genres = Genre::all();
+        return view('movies.edit', compact('genres','movie'));
     }
 
     /**
@@ -68,7 +69,17 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
-        //
+        $validateData = $request->validate([
+            'judul' => 'required',
+            'poster' => 'required',
+            'genre_id' => 'required',
+            'negara' => 'required',
+            'tahun' => 'required|integer',
+            'rating' => 'required|numeric',
+        ]);
+
+        $movie->update($validateData);
+        return redirect('/movies')->with('success', 'Data berhasil di Update!');
     }
 
     /**
@@ -78,6 +89,6 @@ class MovieController extends Controller
     {
         $movie->delete();
 
-        return redirect('/movies')->with('succes', 'Movie deletedsuccessfully');
+        return redirect('/movies')->with('succes', 'Movie deleted successfully');
     }
 }

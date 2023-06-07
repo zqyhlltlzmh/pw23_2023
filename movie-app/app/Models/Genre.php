@@ -9,37 +9,10 @@ class Genre extends Model
 {
     use HasFactory;
 
-    protected $genres = [
-        [
-            'no' =>1,
-            'genre' => 'Horor',
-            'deskripsi' => 'Example'   
-        ],
-        [
-            'no' =>2,
-            'genre' => 'Drama',
-            'deskripsi' => 'Example'   
-        ],
-        [
-            'no' =>3,
-            'genre' => 'Aksi',
-            'deskripsi' => 'Example'   
-        ],
-        [
-            'no' =>4,
-            'genre' => 'Comedy',
-            'deskripsi' => 'Example'   
-        ],
-        [
-            'no' =>5,
-            'genre' => 'Drama',
-            'deskripsi' => 'Example'   
-        ],
+    protected $fillable = ['nama', 'deskripsi'];
 
-    ];
-
-    public function getALLGenres()
+    public function genre()
     {
-        return $this->genres;
+        return $this->belongsTo(Genre::class, 'nama');
     }
 }
