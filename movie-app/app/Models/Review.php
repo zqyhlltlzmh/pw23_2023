@@ -13,6 +13,6 @@ class Review extends Model
     
     public function review()
     {
-        return $this->belongsTo(Review::class, 'user');
+        return $this->belongsTo(Review::class, 'review');
     }
 }

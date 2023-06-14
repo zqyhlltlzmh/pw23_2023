@@ -13,6 +13,6 @@ class Genre extends Model
 
     public function genre()
     {
-        return $this->belongsTo(Genre::class, 'nama');
+        return $this->belongsTo(Genre::class, 'genre');
     }
 }
