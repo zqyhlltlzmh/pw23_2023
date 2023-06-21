@@ -62,7 +62,7 @@
                     @foreach ($movies as $movie)
                     <div class="col">
                         <div class="card shadow-sm">
-                            <img src="https://dummyimage.com/600x400/808080/fff.png">
+                            <img src="/assets/img/{{$movie->poster}}">
                             <div class="card-body">
                                 <h4 class="card-title"><a href="#">{{ $movie->judul }}</a></h4>
                                 <p class="card-text">Genre: {{ $movie->genre->nama }}</p>
